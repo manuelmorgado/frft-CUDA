@@ -1,5 +1,6 @@
 # Fractional Fourier Transform (FrFT) with CUDA
 
+Author: M.Morgado
 ---
 
 Implementation of a CUDA 2D plan for Fractional Fourier Transform with the sequence:
