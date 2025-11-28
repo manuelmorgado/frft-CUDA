@@ -2,7 +2,8 @@
 
 Implementation of a CUDA 2D plan for Fractional Fourier Transform with the sequence:
 
-output -> scale * modulator * ifft2( filtor_fft * fft2(modulator * in) ) / N^2
+  output -> scale * modulator * ifft2( filtor_fft * fft2(modulator * in) ) / N^2
+
 ---
 ## Kernels
 
