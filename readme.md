@@ -7,8 +7,8 @@ Implementation of a CUDA 2D plan for Fractional Fourier Transform with the seque
 
 output -> scale * modulator * ifft2( filtor_fft * fft2(modulator * in) ) / N^2
 
-using kernels:
-
+## Kernels
+---
 - kernel_build_chirps_2d -> 2D modulator and filtor (time-domain) on a square grid NxN
 - kernel_pointwise_mul_mod -> Pointwise: out = data * mod
 - kernel_pointwise_mul_inplace -> Pointwise: data *= filtor_fft
@@ -22,3 +22,7 @@ After preparing and building the CUDA event, the execution occurs when it is exe
 ```
 frft2d_chirp_execute(ctx, h_in, h_out);
 ```
+
+## Compilation
+---
+``` "%CUDA_PATH%\bin\nvcc" frft2d_benchmark.cu -I"%CUDA_PATH%\include" -L"%CUDA_PATH%\lib\x64" -lcufft -o frft2d_benchmark.exe ```
